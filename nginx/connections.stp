@@ -7,12 +7,7 @@ probe process("/usr/sbin/nginx").function("ngx_process_events_and_timers"),
       println("Max connections: ", cycle->connection_n)
       println("Free connections: ", cycle->free_connection_n)
       println("Used connections: ", cycle->connection_n - cycle->free_connection_n)
-
-      println("=====FILES============")
-      println("Max files: ", cycle->files_n)
-      println("Free files: ", cycle->files_n - cycle->open_files->size)
-      println("Open files: ", cycle->open_files->size)
-
-      exit()
     }
+
+    exit()
 }
